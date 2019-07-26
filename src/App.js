@@ -1,17 +1,19 @@
 import React from "react";
 import Navbar from "./components/layout/Navbar";
-import Users from "./components/Users/Users";
+import Users from "./components/Users/UsersContent";
 import "./App.css";
 
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <div className="container content">
-        <Users />
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <div className="container content">
+          <Users />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

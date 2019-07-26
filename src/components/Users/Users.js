@@ -1,11 +1,12 @@
 import React from "react";
-import Search from "../layout/Search";
+import User from "./User";
 
-const Users = () => {
+const Users = props => {
   return (
     <div>
-      <Search searchType={"Users"} />
-      <h1>Loaded</h1>
+      {props.apiData.map(user => (
+        <User key={user.id} user={user} />
+      ))}
     </div>
   );
 };

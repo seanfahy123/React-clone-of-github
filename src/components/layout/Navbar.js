@@ -33,12 +33,12 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Section 3
+                Events
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Section 4
+                About
               </a>
             </li>
           </ul>

@@ -1,10 +1,10 @@
 import React from "react";
 import User from "./User";
 
-const Users = props => {
+const Users = ({ apiData }) => {
   return (
     <div id="userDisplay">
-      {props.apiData.map(user => (
+      {apiData.map(user => (
         <User key={user.id} user={user} />
       ))}
     </div>

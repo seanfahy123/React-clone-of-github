@@ -2,12 +2,13 @@ import React from "react";
 import User from "./User";
 
 const Users = props => {
+  console.log(props.apiData);
   return (
-    <div>
+    <React.Fragment>
       {props.apiData.map(user => (
         <User key={user.id} user={user} />
       ))}
-    </div>
+    </React.Fragment>
   );
 };
 

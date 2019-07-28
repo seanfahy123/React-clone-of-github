@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Search from "../layout/Search";
 import axios from "axios";
 import Users from "./Users";
 
-export default class UsersContent extends Component {
+export default class UsersPage extends Component {
   state = {
     loading: true,
     apiData: {},
@@ -27,10 +27,10 @@ export default class UsersContent extends Component {
       return <Search searchUsers={this.searchUsers} searchType={"Users"} />;
     } else {
       return (
-        <div>
+        <Fragment>
           <Search searchUsers={this.searchUsers} searchType={"Users"} />
           <Users apiData={apiData} />
-        </div>
+        </Fragment>
       );
     }
   }

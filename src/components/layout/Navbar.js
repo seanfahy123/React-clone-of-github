@@ -1,14 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">
-          Github In React
+        <a
+          className="navbar-brand"
+          href="https://github.com/seanfahy123/React-clone-of-github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github in React
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler collapsed"
           type="button"
           data-toggle="collapse"
           data-target="#navbarColor01"
@@ -19,27 +25,27 @@ const Navbar = () => {
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarColor01">
+        <div className="navbar-collapse collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Users <span className="sr-only">(current)</span>
-              </a>
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Users
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Repos
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Events
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="About">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

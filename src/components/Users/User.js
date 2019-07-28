@@ -1,7 +1,6 @@
 import React from "react";
 
 const User = props => {
-  console.log(props.user);
   return (
     <div className="card" key={props.user.id}>
       <div className="card-body">
@@ -10,22 +9,38 @@ const User = props => {
         <p className="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
-          <img
-            src={props.user.avatar_url}
-            alt=""
-            className="round-img"
-            style={{ width: "60px" }}
-          />
         </p>
-        <a href="#" className="card-link">
-          Card link
+        <img
+          src={props.user.avatar_url}
+          alt=""
+          className="round-img"
+          style={{ width: "60px" }}
+        />
+        <a
+          className="card-link"
+          href={props.user.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Profile
         </a>
-        <a href="#" className="card-link">
-          Another link
+        <a
+          className="card-link"
+          href={props.user.html_url + "?tab=repositories"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Repos
         </a>
       </div>
     </div>
   );
 };
+
+// const userStyle = {
+//   display: "grid",
+//   gridTemplateColumns: "repeat(2, 1fr)",
+//   gridGap: "1rem"
+// };
 
 export default User;

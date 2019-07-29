@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <p className="text-primary about">
-        This app is designed to allow the user to search github's API for GitHub
+        This app is designed to allow the user to search GitHub's API for GitHub
         users, repos and events.
       </p>
       <p className="text-primary about">

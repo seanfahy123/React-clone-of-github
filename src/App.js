@@ -15,18 +15,16 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <div>
-        <Navbar />
-        <div className="container content">
-          <Switch>
-            <Redirect from="/" exact to="/Users" />
-            <Route exact path="/Users" component={UsersPage} />
-            <Route exact path="/Repos" component={ReposPage} />
-            <Route exact path="/Events" component={null} />
-            <Route exact path="/About" component={About} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+      <Navbar />
+      <div className="container content">
+        <Switch>
+          <Redirect from="/" exact to="/Users" />
+          <Route exact path="/Users" component={UsersPage} />
+          <Route exact path="/Repos" component={ReposPage} />
+          <Route exact path="/Events" component={null} />
+          <Route exact path="/About" component={About} />
+          <Route component={NotFound} />
+        </Switch>
       </div>
     </Router>
   );

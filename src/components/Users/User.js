@@ -23,19 +23,21 @@ const User = ({ user }) => {
   }
 
   return (
-    <div className="card" key={user.id}>
+    <div className="card">
       <div className="card-body">
-        <h4 className="card-title">{user.login}</h4>
-        <h6 className="card-subtitle mb-2 text-muted">{bio}</h6>
-        <img
-          className="profile-image"
-          src={user.avatar_url}
-          alt=""
-          style={{ width: "60px" }}
-        />
-        <div>
+        <div className="user-header">
+          <img
+            className="profile-image"
+            src={user.avatar_url}
+            alt=""
+            style={{ width: "60px" }}
+          />
+          <h4 className="card-title">{user.login}</h4>{" "}
+        </div>
+        <h6 className="card-subtitle mb-2 text-muted"> {bio}</h6>
+        <div className="user-buttons">
           <a
-            className="btn btn-secondary"
+            className="btn btn-outline-secondary"
             href={user.html_url}
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +45,7 @@ const User = ({ user }) => {
             Profile
           </a>
           <a
-            className="btn btn-secondary"
+            className="btn btn-outline-secondary"
             href={user.html_url + "?tab=repositories"}
             target="_blank"
             rel="noopener noreferrer"

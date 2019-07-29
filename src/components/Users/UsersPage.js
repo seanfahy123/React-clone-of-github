@@ -23,7 +23,9 @@ const UsersPage = () => {
     return (
       <Fragment>
         <Search searchUsers={searchUsers} searchType={"Users"} />
-        <Users apiData={apiData} />
+        <div className="APIDisplay">
+          <Users apiData={apiData} />
+        </div>
       </Fragment>
     );
   }

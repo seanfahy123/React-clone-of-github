@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Search from "../layout/Search";
 import axios from "axios";
-import Users from "../Users/Users";
+import Repos from "./Repos";
 
 const ReposPage = () => {
   const [loaded, setLoaded] = useState(false);
@@ -10,8 +10,8 @@ const ReposPage = () => {
   const searchUsers = async text => {
     const res = await axios.get(
       `https://api.github.com/search/repositories?q=${text}&client_id=${
-        process.env.REACT_APP_GITHUB_CLIENT_ID
-      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+        process.env.REACT_APP_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`
     );
     setApiData(res.data.items);
     setLoaded(true);
@@ -23,7 +23,9 @@ const ReposPage = () => {
     return (
       <Fragment>
         <Search searchUsers={searchUsers} searchType={"Repos"} />
-        <Users apiData={apiData} />
+        <div className="APIDisplay">
+          <Repos apiData={apiData} />
+        </div>
       </Fragment>
     );
   }

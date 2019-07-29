@@ -1,42 +1,63 @@
+/* General */
+
 .content {
   margin-top: 2rem;
 }
 
+/* User Page Styling */
+
 .profile-image {
   margin: 0.5rem 0.5rem;
+  margin-left: 0;
+  justify-self: center;
 }
 
-/* User Page Styling */
+.card-title {
+  display: inline;
+}
+
 @media (min-width: 1300px) {
-  #userDisplay {
+  .APIDisplay {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
   }
 }
 
-@media (min-width: 700px) and (max-width: 1300px) {
-  #userDisplay {
+@media (min-width: 800px) and (max-width: 1300px) {
+  .APIDisplay {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
 }
 
-@media (max-width: 700px) {
-  #userDisplay {
+@media (max-width: 800px) {
+  .APIDisplay {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
 }
 
+.user-buttons {
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  height: 300px;
+}
+
+.user-header {
+  margin-bottom: 0.3rem;
+}
+
 /* About Page */
 .about {
   font-size: 1.5rem;
   line-height: 1.5rem;
-}
-
-.a {
-  height: 400px;
 }

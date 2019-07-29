@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import User from "./User";
 
 const Users = ({ apiData }) => {
   return (
-    <div id="userDisplay">
+    <Fragment>
       {apiData.map(user => (
         <User key={user.id} user={user} />
       ))}
-    </div>
+    </Fragment>
   );
 };
 

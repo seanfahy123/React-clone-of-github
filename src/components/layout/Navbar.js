@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = props => {
+  console.log(props);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -28,24 +29,24 @@ const Navbar = () => {
         <div className="navbar-collapse collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <NavLink className="nav-link" to="/Users">
                 Users
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="Repos">
+              <NavLink className="nav-link" to="/Repos">
                 Repos
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <NavLink className="nav-link" to="/Events">
                 Events
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="About">
+              <NavLink className="nav-link" to="/About">
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -54,4 +55,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

@@ -2,6 +2,11 @@
   margin-top: 2rem;
 }
 
+.profile-image {
+  margin: 0.5rem 0.5rem;
+}
+
+/* User Page Styling */
 @media (min-width: 1300px) {
   #userDisplay {
     display: grid;
@@ -26,6 +31,8 @@
   }
 }
 
-.profile-image {
-  margin: 0.5rem 0.5rem;
+/* About Page */
+.about {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }

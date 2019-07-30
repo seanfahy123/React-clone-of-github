@@ -46,7 +46,7 @@
 .secondary-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  margin: 1rem 0;
 }
 
 .card {
@@ -69,4 +69,17 @@
 .about {
   font-size: 1.5rem;
   line-height: 1.5rem;
+}
+
+/* Loading page */
+#loading {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+#loadingGif {
+  width: 40px;
+  height: 40px;
 }

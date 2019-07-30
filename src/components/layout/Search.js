@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Search = ({ searchUsers, searchType }) => {
+const Search = ({ search, searchType }) => {
   const [searchText, setSearchText] = useState("");
 
   const onSubmit = e => {
     e.preventDefault();
-    searchUsers(searchText);
+    search(searchText);
   };
 
   const onChange = e => {

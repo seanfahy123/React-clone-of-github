@@ -3,12 +3,20 @@ import axios from "axios";
 import Search from "../Layout/Search";
 import MapApi from "../MapApi";
 import Repo from "./Repo";
+import Loading from "../Layout/Loading";
 
 const ReposPage = () => {
   const [loaded, setLoaded] = useState(false);
+  const [loading, setloading] = useState(false);
   const [apiData, setApiData] = useState([]);
 
-  const searchUsers = async text => {
+  const searchRepos = async text => {
+    if (!text) {
+      return;
+    }
+
+    setloading(true);
+
     const res = await axios.get(
       `https://api.github.com/search/repositories?q=${text}&client_id=${
         process.env.REACT_APP_CLIENT_ID
@@ -17,16 +25,18 @@ const ReposPage = () => {
 
     setApiData(res.data.items);
     setLoaded(true);
+    setloading(false);
   };
 
   return (
     <Fragment>
-      <Search searchUsers={searchUsers} searchType={"Repos"} />
+      <Search search={searchRepos} searchType={"Repos"} />
       {loaded && (
         <div className="APIDisplay">
           <MapApi apiData={apiData} Child={Repo} />
         </div>
       )}
+      {loading && <Loading />}
     </Fragment>
   );
 };

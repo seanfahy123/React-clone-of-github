@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className="container content">
+      <div className="container" id="content">
         <Switch>
           <Redirect from="/" exact to="/Users" />
           <Route exact path="/Users" component={UsersPage} />

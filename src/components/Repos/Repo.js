@@ -6,10 +6,10 @@ const Repo = ({ repo }) => {
   const getDescription = () => {
     const description = repo.description;
     if (description != null) {
-      if (description.length < 300) {
+      if (description.length < 250) {
         return description;
       } else {
-        return `${description.substring(0, 300)}....`;
+        return `${description.substring(0, 260)}....`;
       }
     } else {
       return "there is no available description";
@@ -22,6 +22,24 @@ const Repo = ({ repo }) => {
         <div className="user-header">
           <h4 className="card-title">{repo.name}</h4>
         </div>
+        <div className="secondary-info">
+          <div>
+            <i className="fas fa-star" />
+            {repo.stargazers_count}
+          </div>
+          <div>
+            <i className="fas fa-exclamation-circle" />
+            {repo.open_issues}
+          </div>
+          <div>
+            <i className="fas fa-eye" />
+            {repo.watchers}
+          </div>
+          <div>
+            <i className="fas fa-code-branch" />
+            {repo.forks}
+          </div>
+        </div>
         <h6 className="card-subtitle mb-2 text-muted">{getDescription()}</h6>
         <div className="user-buttons">
           <a
@@ -32,14 +50,14 @@ const Repo = ({ repo }) => {
           >
             Repo
           </a>
-          {/* <a
+          <a
             className="btn btn-outline-secondary"
-            href={user.html_url + "?tab=repositories"}
+            href={repo.svn_url + "/issues"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Repos
-          </a> */}
+            Issues
+          </a>
         </div>
       </div>
     </div>

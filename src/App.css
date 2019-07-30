@@ -1,7 +1,8 @@
 /* General */
 
-.content {
+#content {
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* User Page Styling */
@@ -48,6 +49,12 @@
   justify-content: space-between;
 }
 
+.secondary-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
 .card {
   height: 300px;
 }
@@ -60,4 +67,8 @@
 .about {
   font-size: 1.5rem;
   line-height: 1.5rem;
+}
+
+.fas {
+  color: black;
 }

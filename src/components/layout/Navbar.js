@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 
 const Navbar = () => {
+  const navbar = useRef(null);
+
   const closeNavBar = () => {
-    const navbar = document.getElementById("navbarColor01");
-    navbar.classList.remove("show");
+    navbar.current.classList.remove("show");
   };
 
   return (
@@ -30,7 +31,11 @@ const Navbar = () => {
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="navbar-collapse collapse" id="navbarColor01">
+        <div
+          className="navbar-collapse collapse"
+          id="navbarColor01"
+          ref={navbar}
+        >
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <NavLink className="nav-link" to="/Users" onClick={closeNavBar}>

@@ -1,16 +1,12 @@
 import React from "react";
 
-const Repo = ({ repo }) => {
-  console.log(repo);
-
+const Repo = ({ data }) => {
   const getDescription = () => {
-    const description = repo.description;
-    if (description != null) {
-      if (description.length < 250) {
-        return description;
-      } else {
-        return `${description.substring(0, 260)}....`;
-      }
+    const description = data.description;
+    if (description != null && description.length < 250) {
+      return description;
+    } else if (description != null) {
+      return `${description.substring(0, 260)}....`;
     } else {
       return "there is no available description";
     }
@@ -20,31 +16,31 @@ const Repo = ({ repo }) => {
     <div className="card">
       <div className="card-body">
         <div className="user-header">
-          <h4 className="card-title">{repo.name}</h4>
+          <h4 className="card-title">{data.name}</h4>
         </div>
         <div className="secondary-info">
           <div>
             <i className="fas fa-star" />
-            {repo.stargazers_count}
+            {data.stargazers_count}
           </div>
           <div>
             <i className="fas fa-exclamation-circle" />
-            {repo.open_issues}
+            {data.open_issues}
           </div>
           <div>
             <i className="fas fa-eye" />
-            {repo.watchers}
+            {data.watchers}
           </div>
           <div>
             <i className="fas fa-code-branch" />
-            {repo.forks}
+            {data.forks}
           </div>
         </div>
         <h6 className="card-subtitle mb-2 text-muted">{getDescription()}</h6>
-        <div className="user-buttons">
+        <div className="card-buttons">
           <a
             className="btn btn-outline-secondary"
-            href={repo.svn_url}
+            href={data.svn_url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,7 +48,7 @@ const Repo = ({ repo }) => {
           </a>
           <a
             className="btn btn-outline-secondary"
-            href={repo.svn_url + "/issues"}
+            href={data.svn_url + "/issues"}
             target="_blank"
             rel="noopener noreferrer"
           >

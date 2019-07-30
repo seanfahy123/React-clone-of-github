@@ -5,17 +5,11 @@
   margin-bottom: 1rem;
 }
 
-/* User Page Styling */
-
-.profile-image {
-  margin: 0.5rem 0.5rem;
-  margin-left: 0;
-  justify-self: center;
-}
-
 .card-title {
   display: inline;
 }
+
+/* Api Content Styling */
 
 @media (min-width: 1300px) {
   .APIDisplay {
@@ -41,7 +35,7 @@
   }
 }
 
-.user-buttons {
+.card-buttons {
   width: calc(100% - 40px);
   position: absolute;
   bottom: 1rem;
@@ -59,16 +53,20 @@
   height: 300px;
 }
 
-.user-header {
-  margin-bottom: 0.3rem;
+.fas {
+  color: black;
+}
+
+/* User Page Styling */
+
+.profile-image {
+  margin: 0.5rem 0.5rem;
+  margin-left: 0;
+  justify-self: center;
 }
 
 /* About Page */
 .about {
   font-size: 1.5rem;
   line-height: 1.5rem;
-}
-
-.fas {
-  color: black;
 }

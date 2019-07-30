@@ -1,10 +1,8 @@
-import React, { Fragment, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Search from "../Layout/Search";
-import MapApi from "../MapApi";
-import Repo from "./Repo";
+import axios from "axios";
 
-const ReposPage = () => {
+const EventsPage = () => {
   const [loaded, setLoaded] = useState(false);
   const [apiData, setApiData] = useState([]);
 
@@ -14,21 +12,16 @@ const ReposPage = () => {
         process.env.REACT_APP_CLIENT_ID
       }&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`
     );
-
     setApiData(res.data.items);
     setLoaded(true);
   };
 
-  return (
-    <Fragment>
-      <Search searchUsers={searchUsers} searchType={"Repos"} />
-      {loaded && (
-        <div className="APIDisplay">
-          <MapApi apiData={apiData} Child={Repo} />
-        </div>
-      )}
-    </Fragment>
-  );
+  if (loaded === false) {
+    return <Search searchUsers={searchUsers} searchType={"Events"} />;
+  } else {
+    console.log(apiData);
+    return null;
+  }
 };
 
-export default ReposPage;
+export default EventsPage;

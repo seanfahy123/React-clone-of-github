@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
-import Search from "../layout/Search";
 import axios from "axios";
-import Users from "./Users";
+import Search from "../Layout/Search";
+import MapApi from "../MapApi";
+import User from "./User";
 
 const UsersPage = () => {
   const [loaded, setLoaded] = useState(false);
@@ -13,22 +14,21 @@ const UsersPage = () => {
         process.env.REACT_APP_CLIENT_ID
       }&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`
     );
+
     setApiData(res.data.items);
     setLoaded(true);
   };
 
-  if (loaded === false) {
-    return <Search searchUsers={searchUsers} searchType={"Users"} />;
-  } else {
-    return (
-      <Fragment>
-        <Search searchUsers={searchUsers} searchType={"Users"} />
+  return (
+    <Fragment>
+      <Search searchUsers={searchUsers} searchType={"Users"} />
+      {loaded && (
         <div className="APIDisplay">
-          <Users apiData={apiData} />
+          <MapApi apiData={apiData} Child={User} />
         </div>
-      </Fragment>
-    );
-  }
+      )}
+    </Fragment>
+  );
 };
 
 export default UsersPage;

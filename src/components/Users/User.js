@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ReposButton from "../Layout/ReposButton";
+import ProfileButton from "../Layout/ProfileButton";
 
 const User = ({ data }) => {
   const [bio, setBio] = useState(null);
@@ -36,22 +38,8 @@ const User = ({ data }) => {
         </div>
         <h6 className="card-subtitle mb-2 text-muted">{bio}</h6>
         <div className="card-buttons">
-          <a
-            className="btn btn-outline-secondary"
-            href={data.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Profile
-          </a>
-          <a
-            className="btn btn-outline-secondary"
-            href={data.html_url + "?tab=repositories"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Repos
-          </a>
+          <ProfileButton url={data.html_url} />
+          <ReposButton url={data.html_url + "?tab=repositories"} />
         </div>
       </div>
     </div>

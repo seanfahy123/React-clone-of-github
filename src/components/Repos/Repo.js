@@ -1,4 +1,6 @@
 import React from "react";
+import RepoButton from "../Layout/RepoButton";
+import IssuesButton from "../Layout/IssuesButton";
 
 const Repo = ({ data }) => {
   const getDescription = () => {
@@ -38,22 +40,8 @@ const Repo = ({ data }) => {
         </div>
         <h6 className="card-subtitle mb-2 text-muted">{getDescription()}</h6>
         <div className="card-buttons">
-          <a
-            className="btn btn-outline-secondary"
-            href={data.svn_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Repo
-          </a>
-          <a
-            className="btn btn-outline-secondary"
-            href={data.svn_url + "/issues"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Issues
-          </a>
+          <RepoButton url={data.svn_url} />
+          <IssuesButton url={data.svn_url + "/issues"} />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import RepoButton from "../Layout/RepoButton";
-import IssuesButton from "../Layout/IssuesButton";
+import RepoButton from "../Buttons/RepoButton";
+import IssuesButton from "../Buttons/IssuesButton";
 
 const Repo = ({ data }) => {
   const getDescription = () => {

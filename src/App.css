@@ -59,6 +59,10 @@
 
 /* User Page Styling */
 
+.user-header {
+  margin-bottom: 0.5rem;
+}
+
 .profile-image {
   margin: 0.5rem 0.5rem;
   margin-left: 0;

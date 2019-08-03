@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ReposButton from "../Layout/ReposButton";
-import ProfileButton from "../Layout/ProfileButton";
+import ReposButton from "../Buttons/ReposButton";
+import ProfileButton from "../Buttons/ProfileButton";
 
 const User = ({ data }) => {
   const [bio, setBio] = useState(null);
